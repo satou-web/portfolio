@@ -1,0 +1,981 @@
+@charset "UTF-8";
+/*  CSSリセット */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* CSSリセットここまで*/
+
+/**********アニメーション設定**********/
+/*右から左*/
+@keyframes RightToLeft {
+  0% {
+      opacity: 0;/* 透明 */
+      transform: translateX(50px);/* X軸方向に50px */
+  }
+  100% {
+      opacity: 1;/* 不透明 */
+      transform: translateX(0);/* X軸方向に0px */
+  }
+  }
+
+  /*左から右*/
+@keyframes RightToLight {
+  0% {
+      opacity: 0;/* 透明 */
+      transform: translateX(-50px);/* X軸方向に-50px */
+  }
+  100% {
+      opacity: 1;/* 不透明 */
+      transform: translateX(0);/* X軸方向に0px */
+  }
+  }
+  
+  /*上から下*/
+  @keyframes SlideDown {
+  0% {
+      opacity: 0;/* 透明 */
+      transform: translateY(-50px);/* Y軸方向に-50px */
+  }
+  100% {
+      opacity: 1;/* 不透明 */
+      transform: translateY(0);/* Y軸方向に0px */
+  }
+  }
+  
+  /*下から上*/
+  @keyframes SlideUp {
+  0% {
+      opacity: 0;/* 透明 */
+      transform: translateY(50px);/* Y軸方向に50px */
+  }
+  100% {
+      opacity: 1;/* 不透明 */
+      transform: translateY(0);/* Y軸方向に0px */
+  }
+  }
+  /**********アニメーション設定end**********/
+  
+  
+/* アニメーション */
+.fade_off {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+
+.fade_on-a {
+  opacity: 1;
+  animation-name: SlideDown;/* アニメーション名 */
+  animation-duration: 2s;/* アニメーション時間 */
+}
+.fade_on-b {
+  opacity: 1;
+  animation-name: RightToLeft;/* アニメーション名 */
+  animation-duration: 2s;/* アニメーション時間 */
+}
+.fade_on-c {
+  opacity: 1;
+  animation-name: RightToLight;/* アニメーション名 */
+  animation-duration: 2s;/* アニメーション時間 */
+}
+
+
+/*====================
+PCを基本設計にする
+ - 1280px〜：大型PC
+ - 960px〜1279px：小型PC
+ - 600px〜959px：タブレット
+ - 480px〜599px：スマートフォン横
+ - 〜479px：スマートフォン縦
+====================*/
+ 
+ 
+ 
+/* 1280px〜：大型PC
+------------------------------ */
+ 
+/* 共通サイズ　*/
+.wrapper{
+  background-color: #000;
+}
+body {
+  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+  .header,
+  .title,
+  .page-index,
+  .hp,
+  .profile,
+  .skill,
+  footer{
+    box-sizing: border-box;
+    width: 80%;
+    border: solid 10px black;
+    border-left-width: 5px;
+    padding: 10px;
+    margin-left: 20%;
+  }
+
+/*----------------------------------------
+| side-menu
+----------------------------------------*/
+.side{
+  background-color: #fff; /* サイドメニューの背景色を指定する */
+  box-sizing: border-box;
+  position: fixed; /* サイドメニューを固定する */
+  top: 0; /* 上部から配置の基準位置を決める */
+  left: 0; /* 左から配置の基準位置を決める */
+  width: 20%; /* サイドメニューの横幅を指定する */
+  height: 100%; /*サイドメニューの高さを指定する*/
+  color: #000000; /* フォントの色を指定する */
+  border: solid 10px black;
+  border-right-width: 5px;
+}
+
+.side__title{
+  background-color: rgb(20, 19, 19);
+  /* background-color: #31a9ee; */
+  box-sizing: border-box;
+  border: solid 5px black;
+  border-width: 0px 0px 10px 0px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 15px;
+}
+.side__title a {
+  text-decoration: none;
+  color: #fff;
+  }
+
+.side__menu{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 100%;
+  height: auto; /*サイドメニューの高さを指定する*/
+}
+ol.sample1,
+ol.sample1 ol{
+  counter-reset: list;
+  list-style: none;
+  padding: 10px;
+  width:90%;
+  font: 20px/1.6 'arial narrow', sans-serif;
+}
+ol.sample1 ol{
+  margin: 0 0 0 35px;
+  /* width:100%; */
+}
+ 
+.sample1 a{
+  position: relative;
+  display: block;
+  padding: 4px 4px 4px 31px;
+  margin: 7px 0;
+  background: #fef6f3;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out; 
+}
+ 
+.sample1 a:hover{
+  background: rgb(20, 19, 19);
+  color: #fff;
+}
+ 
+.sample1 a:hover:before{
+  left: -10px;
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);    
+}
+ 
+.sample1 a:before{
+  content: counter(list);
+  counter-increment: list;
+  position: absolute;   
+  top: 50%;
+  left: -15px;
+  height: 26px;
+  width: 26px;
+  margin-top: -15px;
+  background:  rgb(20, 19, 19);
+  color: #fff;
+  line-height: 26px;
+  border: 3px solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 26px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+/*----------------------------------------
+| header
+----------------------------------------*/
+.header{
+  border-bottom-width: 5px;
+  writing-mode:vertical-rl;/*縦書き*/
+}
+.header h1{
+  margin: auto 80%;
+  font-size: 3rem;
+}
+.header,
+footer{
+  background-color: gold;
+  box-sizing: border-box;
+  /* width: 80%; */
+  height: 635px;
+  font-size: 1rem;
+  line-height: 5rem;
+  color: rgb(20, 19, 19);
+  padding: 8%;
+}
+/*----------------------------------------
+| footer
+----------------------------------------*/
+footer{
+  writing-mode: initial;
+  border-top-width: 5px;
+}
+footer h1{
+  margin: 60px 100px 100px 300px;
+  font-size: 3rem;
+}
+
+/*----------------------------------------
+| title
+----------------------------------------*/
+.title {
+  background-color: rgb(20, 19, 19);
+  /* background-color: #31a9ee; */
+  box-sizing: border-box;
+  width: 80%;
+  height: 20%;
+  padding: 70px;
+  border: solid 5px black;
+  border-right-width: 10px;
+  color: #fff;
+}
+.title p{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: -10px;
+}
+.title a{
+  text-decoration: none;
+  color: #fff;
+}
+/*----------------------------------------
+| profile
+----------------------------------------*/
+.profile{
+  display: flex;
+  border: none;
+  padding: 0px;
+}
+
+.profile__title{
+  background-color: gray;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  border: solid 5px black;
+  width: 25%;
+  padding: 10px;
+  font-size: 2rem;
+  writing-mode:vertical-rl;
+  text-align: center;
+}
+.profile__title p{
+  margin: 0px 90px;
+}
+.profile__copy{
+  background-color: #fff;
+  overflow: hidden;
+  border: solid 5px black;
+  border-right-width: 10px;
+  width: 80%;
+  padding: 10px;
+}
+.profile__copy h2{
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 30px;
+}
+.profile__copy__list-a h3 span,
+.profile__copy__list-b h3 span,
+.skill__list span{
+  font-size: 40px;
+}
+.profile__copy__list-a{
+  background-color: #fef6f3;
+  box-sizing: border-box;
+  width: 35%;
+  float: left;
+  padding: 20px;
+  margin: 5% 5% 3% 10%;
+}
+.profile__copy__list-b{
+  background-color: #fef6f3;
+  box-sizing: border-box;
+  width: 35%;
+  float: right;
+  padding: 20px;
+  margin: 5% 10% 3% 5%;
+} 
+
+ul.sample2{
+  counter-reset:list;
+  list-style-type:none;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  padding:0;
+}
+ul.sample2 li{
+  position:relative;
+  color: #333;
+  padding: 0 0 0 23px;
+  margin: 7px 0px;
+  line-height: 30px;
+  border-bottom: dashed 1px #ccc;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 20px;
+}
+ul.sample2 li:before{
+  counter-increment: list;
+  content: counter(list) ".";
+  display: block;
+  position: absolute;
+  left: 0px;
+  font-weight: bold;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+ul.sample2 li:hover,
+ul.sample2 li:hover:before{
+  font-size: 30px;
+  color: black;
+}
+
+/*----------------------------------------
+| skill
+----------------------------------------*/
+.skill{
+  background-color: #fff;
+  display: flex;
+  padding: 0;
+  border-width: 5px 10px 5px 5px;
+}
+.skill__list{
+  background-color: #fef6f3;
+  box-sizing: border-box;
+  border: none;
+  width : calc(100% / 3) ;
+  height: auto;
+  padding: 20px;
+  /* justify-content:space-between; */
+}
+/*----------------------------------------
+| HPリンクボタン
+----------------------------------------*/
+.arrow {
+  display:  inline-block;
+  color: #fff;
+  margin-top: 20px;
+  text-decoration:  none;
+  background-color: #333;
+  padding:  10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 0px 0px #000;
+
+  border-bottom: 0.1875em solid #000;
+  color: #fff;
+  display: inline-block;
+  padding: 0.6em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.arrow::before {
+  content:  '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 7px;
+  border-color: transparent transparent transparent #ffffff;
+  display:  inline-block;
+  vertical-align:  middle;
+  position:  relative;
+  top: -2px;
+  margin-right: 2px;
+}
+
+.arrow:hover {
+  border-bottom-color: transparent;
+  transform: translateY(0.1875em);
+}
+/*----------------------------------------
+| 制作物
+----------------------------------------*/
+.hp{
+  background-color: black;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+}
+
+.hp-a,
+.hp-b{
+  /* background-color: white; */
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.hp__key-concept,
+.hp__key-visual{
+  background-color: #31a9ee;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  border: solid 5px black;
+}
+.hp__key-visual{
+  background-color: black;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 50%;
+  height: auto;
+  border-right-width: 10px;
+}
+.main_img{
+  width: 100%;
+  height: 100%;
+  background: url('../img/863-350x250.jpg');
+  background-size: cover;
+}
+.img_a {
+  background: url('../img/portfolio-top.png');
+  background-size: cover;
+}
+.hp__key-concept{
+  width: 50%;
+  height: auto;
+  text-align: center;
+  padding: 10%;
+}
+.hp__key-concept h2{
+  /* background-color: aqua; */
+  font-size: 1.8rem;
+  padding: 5px;
+}
+
+.hp__key-concept h3{
+  /* background-color: red; */
+  font-size: 1.3rem;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.hp__key-concept p{
+  /* background-color: yellow; */
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: left;
+  padding: 5px;
+}
+
+
+ /* 偶数番目の場合、横並びを反転 */
+ .hp-b{
+  flex-direction: row-reverse;
+}
+.hp-b .hp__key-concept{
+  border: solid 5px black;
+  border-right-width: 10px;
+}
+.hp-b .hp__key-visual{
+  border: solid 5px black;
+}
+
+.sample6 {
+  width: 70%;
+  height: 70%;
+	overflow:		hidden;
+	margin-left: 15%;
+	position:		relative;
+}
+.sample6{
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+}
+.sample6 img{
+  width: 100%;
+  height: 100%;
+}
+.sample6 .caption {
+	font-size:		130%;
+	color:			#fff;
+	padding-top:		20%;
+  padding-left:		40%;
+}
+.sample6 .caption{
+  padding-top:	40%;
+  padding-left:	30%;
+}
+.sample6 .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+	-webkit-transform:	scale(0);	/* 大きさを０にして表示しない */
+	transform:		scale(0);
+}
+.sample6 .mask a {
+  text-decoration: none;
+}
+.sample6:hover .mask {
+	-webkit-transform:	scale(1);	/* 大きさを１にして表示する */
+	transform:		scale(1);
+}
+
+ 
+/* 960px〜1279px：小型PC
+------------------------------ */
+@media screen and (min-width:960px) and (max-width:1024px) {
+ /*----------------------------------------
+| header
+----------------------------------------*/
+.header h1{
+  margin: 70px 210px 0px 100px;
+}
+
+ /*----------------------------------------
+| side-menu
+----------------------------------------*/
+  .side__title p {
+    font-size: 1.2rem;
+  }
+/*----------------------------------------
+| profile
+----------------------------------------*/
+.profile__title p{
+  margin: 0px 50px;
+}
+/*----------------------------------------
+| HPキーコンセプト
+----------------------------------------*/
+.hp__key-concept{
+  padding: 20px;
+}
+.hp__key-concept h2{
+  font-size: 1.5rem;
+}
+/*----------------------------------------
+| footer
+----------------------------------------*/
+footer h1{
+  margin: 90px 100px 80px 150px;
+}
+ 
+}
+ 
+/* 600px〜959px：タブレット
+------------------------------ */
+@media screen and (min-width:600px) and (max-width:959px) {
+  /*----------------------------------------
+| header
+----------------------------------------*/
+.header h1{
+  margin: 100px 140px 0px 100px;
+}
+
+ /*----------------------------------------
+| side-menu
+----------------------------------------*/
+.side__menu li a{
+  font-size: 0.8rem;
+}
+  .side__title p {
+    font-size: 0.7rem;
+  }
+/*----------------------------------------
+| profile
+----------------------------------------*/
+.profile__title p{
+  margin: 0px 25px;
+}
+.profile__copy h2{
+  font-size: 2rem;
+}
+.profile__copy__list-a{
+  width: 40%;
+  height: 70%;
+  margin: 5% 3% 3% 5%;
+}
+.profile__copy__list-b{
+  width: 40%;
+  height: 70%;
+  margin: 5% 3% 3% 5%;
+} 
+/*----------------------------------------
+| skill
+----------------------------------------*/
+.skill__list{
+  background-color: #fef6f3;
+  box-sizing: border-box;
+  width: 30%;
+  height: auto;
+  padding: 20px;
+  /* justify-content:space-between; */
+  margin: 10px;
+}
+/*----------------------------------------
+| hp
+----------------------------------------*/
+.hp{
+  height: auto;
+}
+.hp-a,
+.hp-b{
+  flex-direction:column;
+}
+
+.hp__key-concept{
+  width: 100%;
+  height: auto;
+  background-color: #31a9ee;
+}
+
+.hp__key-visual{
+  display: none;
+}
+/*----------------------------------------
+| footer
+----------------------------------------*/
+footer h1{
+  margin: 90px 90px 70px 100px;
+}
+ 
+}
+ 
+ 
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+ /*----------------------------------------
+| side-menu
+----------------------------------------*/
+.side{
+  display: none;
+}
+ /*----------------------------------------
+| 共通幅設定
+----------------------------------------*/
+.header,
+.title,
+.profile,
+.skill,
+.hp,
+footer{
+  width: 100%;
+  margin-left: 0%;
+}
+  /*----------------------------------------
+| header
+----------------------------------------*/
+.header{
+  height: 100%;
+}
+.header h1{
+  margin: 1% 70% 0 5%;
+  font-size: 1.3rem;
+}
+/*----------------------------------------
+| profile
+----------------------------------------*/
+.profile__title p{
+  margin: 1% 3%;
+}
+.profile__copy h2{
+  font-size: 1.7rem;
+}
+.profile__copy__list-a{
+  width: 100%;
+  margin: 1.5% 5% 2% 0%;
+}
+.profile__copy__list-b{
+  width: 100%;
+  margin: 1.5% 0% 2% 5%;
+} 
+/*----------------------------------------
+| skill
+----------------------------------------*/
+.skill{
+  flex-direction:column;
+}
+.skill__list{
+  width: 100%;
+  margin: 5% 10% 5% 0%;
+}
+/*----------------------------------------
+| hp
+----------------------------------------*/
+.hp{
+  height: auto;
+}
+.hp-a,
+.hp-b{
+  flex-direction:column;
+}
+.hp__key-concept{
+  width: 100%;
+  height: auto;
+}
+.hp__key-visual{
+  display: none;
+}
+/*----------------------------------------
+| footer
+----------------------------------------*/
+footer h1{
+  margin: 90px 80px 70px 85px;
+}
+}
+ 
+ 
+/* 479px~：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ /*----------------------------------------
+| side-menu
+----------------------------------------*/
+.side{
+  display: none;
+}
+ /*----------------------------------------
+| 共通幅設定
+----------------------------------------*/
+.header,
+.title,
+.profile,
+.skill,
+.hp,
+footer{
+  width: 100%;
+  margin-left: 0%;
+}
+/*----------------------------------------
+| header
+----------------------------------------*/
+.header{
+  height: 100%;
+}
+.header h1{
+  margin: 20% 10% 0 5%;
+  font-size: 2rem;
+}
+/*----------------------------------------
+| title
+----------------------------------------*/
+.title{
+  height: 200px;
+  padding: 0px;
+}
+.title p {
+  font-size: 1.6rem;
+  margin: 19% 0% 0% 0%;
+}
+
+/*----------------------------------------
+| profile
+----------------------------------------*/
+.profile__title p{
+  margin: 1% 2%;
+}
+.profile__copy h2{
+  font-size: 1.3rem;
+  margin: 0% 2% 2% 2%;
+}
+.profile__copy__list-a{
+  width: 100%;
+  margin: 1.5% 5% 2% 0%;
+}
+.profile__copy__list-b{
+  width: 100%;
+  margin: 1.5% 0% 2% 5%;
+} 
+/*----------------------------------------
+| skill
+----------------------------------------*/
+.skill{
+  flex-direction:column;
+}
+.skill__list{
+  width: 100%;
+  margin: 5% 10% 5% 0%;
+}
+/*----------------------------------------
+| hp
+----------------------------------------*/
+.hp{
+  height: auto;
+}
+.hp-a,
+.hp-b{
+  flex-direction:column;
+}
+.hp__key-concept{
+  width: 100%;
+  height: auto;
+}
+.hp__key-concept h2{
+  font-size: 1.7rem;
+}
+.hp__key-visual{
+  display: none;
+}
+/*----------------------------------------
+| footer
+----------------------------------------*/
+footer{
+  height: fit-content;
+}
+footer h1{
+  margin: 5% 20%;
+  line-height: 3rem;
+  font-size: 1.3rem;
+}
+}

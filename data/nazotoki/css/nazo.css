@@ -1,0 +1,582 @@
+@charset "UTF-8";
+/*  CSSリセット */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* CSSリセットここまで*/
+
+
+/* =======================================
+
+	スライダー全体設定
+
+======================================= */
+body {
+	font-size: 100%;
+	line-height: 160%;
+	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: center;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+a:link { text-decoration:nderline; color: #0000ff;}
+a:visited { text-decoration:nderline; color: #0000ff;}
+a:active { text-decoration:nderline; color: #0000ff;}
+a:hover { text-decoration:none; color: #0000ff;}
+
+/* p {
+	padding: 0 0 30px 0;
+}
+
+h1 {
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+}
+h2 {
+	bottom: 0;
+	left: 0;
+	padding: 30px 0;
+	width: 100%;
+	font-size: 12px;
+	position: absolute;
+} */
+
+/* #container
+--------------------------- */
+#container {
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+/* .stageBase
+--------------------------- */
+.stageBase {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.stageBase .fieldWrap {
+	padding: 0;
+	text-align: center;
+}
+#stage1 {background:#fff;}
+#stage2 {background:#eee;}
+#stage3 {background:#ddd;}
+#stage4 {background:#ccc;}
+#stage5 {background:#bbb;}
+#stage6 {background:#aaa;}
+
+
+/* .stageSlide
+--------------------------- */
+.stageSlide {
+	position: relative;
+	overflow: hidden;
+	visibility: hidden;
+}
+.stageSlide .slideWrap {
+	top: 0;
+	left: 0;
+	position: absolute;
+	overflow: hidden;
+}
+.stageSlide .slideWrap:before,
+.stageSlide .slideWrap:after {
+	content: " ";
+	display: table;
+}
+.stageSlide .slideWrap:after {clear: both;}
+.stageSlide .slideWrap {*zoom: 1;}
+
+.stageSlide .slidePanel {
+	float: left;
+	overflow: hidden;
+}
+
+.stageSlide .sdPrev,
+.stageSlide .sdNext {
+	margin-top: -25px;
+	top: 50%;
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	z-index: 99;
+}
+.stageSlide .sdPrev {
+	left: 80px;
+	background: transparent url(../img/slide_prev.png) no-repeat left top;
+}
+.stageSlide .sdNext {
+	right: 80px;
+	background: transparent url(../img/slide_next.png) no-repeat left top;
+}
+
+.stageSlide .slideNav {
+	bottom: 70px;
+	left: 0;
+	width: 100%;
+	height: 15px;
+	text-align: center;
+	position: absolute;
+	z-index: 98;
+}
+.stageSlide .slideNav a {
+	margin: 0 5px;
+	width: 15px;
+	height: 15px;
+	background: transparent url(../img/nav.png) no-repeat center center;
+	display: inline-block;
+	overflow: hidden;
+}
+.stageSlide .slideNav a.pnActive {
+	background: transparent url(../img/nav_acv.png) no-repeat center center;
+}
+
+/* #pageNav
+--------------------------- */
+#pageNav {
+	top: 0;
+	right: 25px;
+	width: 15px;
+	text-align: center;
+	position: fixed;
+	z-index: 2;
+}
+#pageNav ul {
+	width: 15px;
+	display: block;
+}
+#pageNav ul li {
+	padding-bottom: 5px;
+	width: 15px;
+	height: 15px;
+	display: block;
+	overflow: hidden;
+}
+#pageNav ul li a {
+	width: 15px;
+	height: 15px;
+	background: transparent url(../img/nav.png) no-repeat center center;
+	display: block;
+}
+#pageNav ul li.activeStage a {
+	background: transparent url(../img/nav_acv.png) no-repeat center center;
+}
+
+/* #pageDown
+--------------------------- */
+#pageDown {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	position: fixed;
+	overflow: hidden;
+	z-index: 3;
+}
+#pageDown a {
+	margin: 0 auto;
+	width: 30px;
+	height: 30px;
+	background: transparent url(../img/next_arw.png) no-repeat center center;
+	display: block;
+}
+
+/* =======================================
+
+	各ページ設定
+
+======================================= */
+/**********文字が踊る設定start**********/
+.bg,
+.maincontents {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  animation: bgAnime 1s linear 1.8s forwards;
+}
+
+.text {
+  text-align: center;
+  font-size: 6vw;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  height: 1em;
+  line-height: 1.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 7;
+  opacity: 0;
+  animation: textAnime1 .5s linear forwards;
+}
+
+.text span{
+  display: inline-block;
+}
+
+.text span:nth-child(1){
+  animation: textAnime2 .6s ease-in-out .4s forwards;
+}
+
+.text span:nth-child(2){
+  animation: textAnime2 .6s ease-in-out .5s forwards;
+}
+
+.text span:nth-child(3){
+  animation: textAnime2 .6s ease-in-out .6s forwards;
+}
+
+.text span:nth-child(4){
+  animation: textAnime2 .6s ease-in-out .7s forwards;
+}
+
+.text span:nth-child(5){
+	animation: textAnime2 .6s ease-in-out .8s forwards;
+}
+
+.text span:nth-child(6){
+	animation: textAnime2 .6s ease-in-out .9s forwards;
+}
+
+/*keyframe*/
+@keyframes textAnime1{
+0%{
+  opacity: 0;
+}
+100%{
+  opacity: 1;
+}
+}
+
+@keyframes textAnime2 {
+0% {
+  transform: translateY(0);
+}
+25%{
+  transform: translateY(-30%);
+}
+75% {
+  transform: translateY(30%);
+}
+100%{
+  transform: translateY(0);
+}
+}
+
+@keyframes bgAnime{
+0%{
+  opacity: 1;
+}
+99%{
+  opacity: 0;
+}
+100%{
+  opacity: 0;
+  display: none;
+}
+}
+/**********文字が踊る設定end**********/ 
+
+/**********ページ設定start**********/
+body,html{  
+	width: 100%; 
+	height: 100%;
+}
+
+body {
+  background-color: #222;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.page1,
+.page2,
+.page3,
+.page4,
+.page5,
+.page6 {
+  background-color: #222;
+  position: relative;
+  box-sizing: border-box;
+  color: #fff;
+  width: 90vw;
+  height: 90vh;
+  border: 10px solid #fff;
+  margin: 5vh 5vw;
+  text-align: center;
+}
+.page1 h3,
+.page2 h3,
+.page3 h3,
+.page4 h3,
+.page5 h3,
+.page6 h3 {
+  /* background-color: aqua; */
+  position: absolute;
+  top: 5%;
+  font-size: 3rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  line-height: 4rem;
+}
+
+.page1 p {
+  /* background-color: #0000ff; */
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding:5%;
+  line-height: 4rem;
+  margin-top: 11%;
+}
+/**********ページ設定end**********/ 
+
+/**********出題部分start**********/
+img{
+	position: absolute;
+	width: 35vw;
+	height: auto;
+
+/* 中央寄せ */
+top: 50%;
+left: 50%;
+transform: translateY(-50%) translateX(-50%);
+-webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.page2,
+.page3,
+.page4,
+.page5,
+.page6{
+	display: flex;
+	flex-direction: column;
+}
+input[type='text']{
+	position: absolute;
+	width: 25%;
+	/* max-width: 400px; */
+	padding: 1%;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+/* 中央寄せ */
+top: 90%;
+left: 45%;
+transform: translateY(-90%) translateX(-45%);
+-webkit-transform: translateY(-90%) translateX(-45%);
+  }
+
+input[type='submit']{
+	position: absolute;
+	border: none;
+	display: block;
+	width: auto;
+	max-width: 10%;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #333;
+	color: #fff;
+	font-weight: bold;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+/* 中央寄せ */
+top: 90%;
+left: 65%;
+transform: translateY(-90%) translateX(-65%);
+-webkit-transform: translateY(-90%) translateX(-65%);
+  }
+/**********出題部分end**********/ 
+
+/**********ボタン設定start**********/
+a.button {
+	display: block;
+	position: absolute;
+	text-decoration: none;
+	background:  brown;
+	color: #FFF;
+	width: 240px;
+	height: 240px;
+	line-height: 240px;
+	border-radius: 50%;
+	font-size: 1.8rem;
+	font-weight: bold;
+	overflow: hidden;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+	border-bottom: solid 3px  rgb(90, 23, 23);
+	transition: .4s;
+	 /* 中央寄せ */
+	 top: 50%;
+	 left: 50%;
+	 transform: translateY(-50%) translateX(-50%);
+	 -webkit-transform: translateY(-50%) translateX(-50%);
+  }
+
+  
+  .button:active {
+	-webkit-transform: translateY(2px);
+	transform: translateY(2px);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+	border-bottom: none;
+  }
+  /**********ボタン設定end**********/
+
+
+/* 960px〜1279px：小型PC
+------------------------------ */
+@media screen and (min-width:960px) and (max-width:1024px) {
+
+
+
+ 
+}
+ 
+/* 600px〜959px：タブレット
+------------------------------ */
+@media screen and (min-width:600px) and (max-width:959px) {
+ 
+}
+ 
+ 
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+
+}
+ 
+ 
+/* 479px~：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+
+
+}

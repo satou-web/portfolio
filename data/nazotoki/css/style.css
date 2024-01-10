@@ -1,0 +1,559 @@
+@charset "UTF-8";
+/*  CSSリセット */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* CSSリセットここまで*/
+
+/**********文字が傾く設定start**********/
+ 
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bgAnime 1s linear 1.8s forwards;
+}
+
+.text {
+  text-align: center;
+  font-size: 6vw;
+  color: #fff;
+  height: 1em;
+  line-height: 1.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  animation: textAnime2 .1s linear 1.5s forwards;
+}
+
+.text:after{
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background: rgb(32, 32, 32);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  animation: textAnime1 1.7s linear forwards;
+}
+
+/*keyframe*/
+
+@keyframes textAnime1 {
+0% {
+  transform: translateX(0);
+}
+100% {
+  transform: translateX(100%);
+}
+}
+
+@keyframes textAnime2 {
+0%{
+  transform: rotate(0);
+}
+100%{
+  transform: rotate(-10deg);
+}
+}
+
+@keyframes bgAnime {
+0%{
+  opacity: 1;
+}
+99%{
+  opacity: 0;
+}
+100%{
+  opacity: 0;
+  display: none;
+}
+}
+  
+/**********文字が傾く設定end**********/   
+
+/**********映画風設定start**********/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+body {
+  background-color: #111;
+  background-image: radial-gradient(#333, #111);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  width: 100vw;
+  font-weight: 700;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#fly-in {
+  font-size: 3.5rem;
+  width: 100vw;
+  height: 100vh; 
+  text-transform: uppercase;
+  /* 中央寄せ */
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#fly-in span {
+  display: block;
+  font-size: .4em;
+  opacity: .8;
+}
+
+#fly-in div {
+ position: fixed; 
+  opacity: 0;
+  width: 100vw;
+  animation: switch 45s linear infinite;
+  /* 中央寄せ */
+  display: table-cell;
+  vertical-align: middle;
+  top: 45vh;
+}
+
+#fly-in div:nth-child(1) { animation-delay: 4s}
+#fly-in div:nth-child(2) { animation-delay: 8s}
+#fly-in div:nth-child(3) { animation-delay: 12s}
+#fly-in div:nth-child(4) { animation-delay: 16s}
+#fly-in div:nth-child(5) { animation-delay: 20s}
+#fly-in div:nth-child(6) { animation-delay: 24s}
+#fly-in div:nth-child(7) { animation-delay: 28s}
+#fly-in div:nth-child(8) { animation-delay: 32s}
+
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:scale(12)}
+    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+/**********映画風設定end**********/
+
+
+/**********スキップボタン設定start**********/
+.button {
+  position: fixed;
+  display: inline-block;
+  text-decoration: none;
+  background:  brown;
+  color: #FFF;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px  rgb(90, 23, 23);
+  transition: .4s;
+  z-index: 5;
+  display: table-cell;
+  vertical-align: middle;
+  bottom: 5vh;
+  right: 2vw;
+}
+
+.button:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+/**********スキップボタン設定end**********/
+
+/**********サイト画面start**********/
+.mainSite {
+  background-color: #000;
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 2%;
+  margin: 0;
+}
+
+.mainSite a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.mainSite a:hover{
+  font-size: 2.3rem;
+}
+
+.mainSite a:active{
+  color:yellow;
+}
+.arrow-ue,
+.arrow-hidari,
+.arrow-migi,
+.arrow-sita,
+.ue,
+.hidari,
+.naka,
+.naka__title,
+.naka__day,
+.migi,
+.sita {
+  position: absolute;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+  font-size: 2rem;
+}
+.naka{
+  background-color: brown;
+  box-sizing: border-box;
+  width: 60vw;
+  height: 60vh;
+  border: 5px solid #fff;
+  padding: 2%;
+}
+.naka__title{
+  font-size: 4rem;
+  margin-top: -5%;
+  width: 100%;
+}
+
+.naka__day{
+  font-size: 2rem;
+  margin-top: 15%;
+  width: 100%;
+}
+/**********矢印start**********/
+.arrow-ue,
+.arrow-hidari,
+.arrow-migi,
+.arrow-sita{
+  box-sizing: border-box;
+  /* サイズの指定 */
+  width: 20px;
+  height: 20px;
+  /* 線の太さの指定 */
+  border: 4px solid;
+  /* 矢印の向き（角度）を指定 */
+  transform: rotate(-45deg);
+}
+.arrow-ue{
+  /* 色とベースの向きの指定（上・右・下・左 の順） */
+  border-color: #fff #fff transparent transparent;
+  margin-top:-35vh;
+}
+.arrow-hidari {
+  /* 色とベースの向きの指定（上・右・下・左 の順） */
+  border-color:  #fff transparent transparent #fff;
+  margin-left: -35vw;
+}
+.arrow-migi{
+  /* 色とベースの向きの指定（上・右・下・左 の順） */
+  border-color: transparent #fff  #fff transparent;
+  margin-left: 35vw;
+}
+.arrow-sita{
+  /* 色とベースの向きの指定（上・右・下・左 の順） */
+  border-color: transparent transparent #fff  #fff ;
+  margin-top: 35vh;
+}
+/**********矢印設定end**********/
+.ue{
+  margin-top: -45vh;
+  /* width: 100%; */
+}
+.hidari{
+ margin-left: -40vw;
+ writing-mode: vertical-lr;
+ height: 100%;
+}
+.migi{
+  margin-left: 40vw;
+  writing-mode: vertical-rl;
+  height: 100%;
+}
+.sita{
+  margin-top: 45vh;
+  /* width: 100%; */
+}
+/**********サイト画面end**********/
+
+/* 960px〜1279px：小型PC
+------------------------------ */
+@media screen and (min-width:960px) and (max-width:1024px) {
+  /* #fly-in {
+    margin: 35% auto;
+  } */
+/**********映画風設定end**********/
+
+/**********スキップボタン設定start**********/
+/* .button {
+  margin-top: 20%;
+  margin-left: 28%;
+ } */
+/**********スキップボタン設定end**********/
+}
+  
+ /* 550px〜959px：タブレット
+ ------------------------------ */
+ @media screen and (min-width:550px) and (max-width:959px) {
+/**********映画風設定start**********/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+/* #fly-in {
+  margin: 20% auto;
+  font-size: 3rem;
+} */
+/**********映画風設定end**********/
+
+/**********サイト画面start**********/
+/**********矢印start**********/
+.arrow-ue{
+  margin-top:-35vh;
+}
+.arrow-hidari {
+  margin-left: -33vw;
+}
+.arrow-migi{
+  margin-left: 30vw;
+}
+.arrow-sita{
+  margin-top: 31vh;
+}
+/**********矢印設定end**********/
+  .ue,
+  .hidari,
+  .naka,
+  .migi,
+  .sita {
+     font-size: 1.8rem;
+  }
+  .naka__title{
+    font-size: 2.5rem;
+    padding: 2% 2% 1% 2%;
+  }
+  .naka__day{
+   font-size: 1.8rem;
+   padding: 1% 2% 2% 2%;
+ }
+ .ue{
+  margin-top: -45vh;
+  width: 100%;
+}
+.hidari{
+ margin-left: -40vw;
+ writing-mode: vertical-lr;
+ height: 100%;
+}
+.migi{
+  margin-left: 40vw;
+  writing-mode: vertical-rl;
+  height: 100%;
+}
+.sita{
+  margin-top: 45vh;
+  width: 100%;
+}
+/**********サイト画面end**********/
+
+/**********スキップボタン設定start**********/
+.button {
+  margin-top: 10%;
+  margin-left: 25%;
+ }
+/**********スキップボタン設定end**********/
+}
+  
+  
+ /* 480px〜549px：SP横
+ ------------------------------ */
+ @media screen and (min-width:480px) and (max-width:549px) { 
+ /**********スキップボタン設定start**********/
+
+}
+  
+  
+ /* 479px~：スマートフォン縦
+ ------------------------------ */
+ @media screen and (max-width:479px) { 
+/**********映画風設定start**********/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+/* #fly-in {
+  margin: 40% auto;
+  font-size: 2.8em;
+} */
+/**********映画風設定end**********/
+
+
+/**********サイト画面start**********/
+/**********矢印start**********/
+.arrow-ue{
+  margin-top:-33vh;
+}
+.arrow-hidari {
+  margin-left: -34vw;
+}
+.arrow-migi{
+  margin-left: 30vw;
+}
+.arrow-sita{
+  margin-top: 30vh;
+}
+/**********矢印設定end**********/
+  .ue,
+  .hidari,
+  .naka,
+  .migi,
+  .sita {
+     font-size: 1rem;
+  }
+  .naka__title{
+    font-size: 2.5rem;
+    padding: 2% 2% 1% 2%;
+  }
+  .naka__day{
+   font-size: 1.5rem;
+   padding: 1% 2% 2% 2%;
+   margin-top: 30%;
+ }
+ .ue{
+  margin-top: -40vh;
+  width: 100%;
+}
+.hidari{
+ margin-left: -40vw;
+ writing-mode: vertical-lr;
+ height: 100%;
+}
+.migi{
+  margin-left: 40vw;
+  writing-mode: vertical-rl;
+  height: 100%;
+}
+.sita{
+  margin-top: 40vh;
+  width: 100%;
+}
+/**********サイト画面end**********/
+
+/**********スキップボタン設定start**********/
+/* .button {
+  margin-top: 80%;
+  margin-left: 10%;
+ } */
+/**********スキップボタン設定end**********/
+}
