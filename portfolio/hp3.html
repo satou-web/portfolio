@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <!-- 表示領域指定 -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+        <!-- 利用できる中で互換性のモードを設定できる -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <!-- 人間様の目には見えない、ホームページの概要を書いた説明書き -->
+        <meta name="description" content="このサイトは個人的に制作したportfolioです。もし実在する同名のブログなどがあっても、当サイトとの関係はございません。">
+        <!-- cssをリンクさせる -->
+        <link rel="stylesheet" href="css/hpstyle2.css">
+        <title>SATO's ポートフォリオ｜ページ解説</title>
+        <!-- 先にjQueryを読み込む記述を書く --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="side">
+                <div class="side__title">
+                    <a href="index.html#top">SATO's<br>ポートフォリオ</a>
+                </div>
+
+                <div class="side__menu">
+                    <ol class="sample1">
+                        <li><a href="#top-jump">クライアント情報</a></li>
+                        <li><a href="#contents-jump">コンテンツアイデア</a></li>
+                        <li><a href="#page-jump">各ページの解説</a></li>
+                        <li><a href="#hp-jump">その他制作物</a></li>      
+                    </ol>
+                </div>
+            </div>
+
+            <div class="title" id="top-jump">
+                <p>クライアント情報</p>
+            </div>
+            <div class="data">
+                <ul class="sample2">
+                    <li>クライアント：鉄道会社。</li>
+                    <li>目的：謎解きゲームを通して、普段利用が少ない駅を利用してもらう。</li>
+                    <li>ペルソナ：3０代。男性。謎解き好きで、ブログに体験談を載せている。運動は苦手。</li>
+                    <li>ペルソナを導く流れ：ネットで体験談を検索する。</li> 
+                    <li>流入フロー：スマホもしくはタブレット。</li>        
+                </ul>
+            </div>
+
+            <div class="title sample-a fade_off" id="contents-jump">
+                <p>コンテンツアイデア</p>
+            </div>
+            
+            <div class="header sample-a fade_off">
+                <div class="sample5">
+                    <img src="../portfolio/img/nazotoki-top.png" alt="サイトのホーム画面の画像" />
+                    <a href="../portfolio/nazotoki/index.html#top" target="_blank" ><div class="mask">
+                        <div class="caption">クリックして<br>サイトへ飛ぶ</div>
+                    </div></a>
+                </div>
+                <div class="header__hp-concept">
+                    <h2>ワクワク感を出すデザイン</h2>
+                    <p> &emsp;設定したペルソナ像から『没入感』『操作性』をキーワードとして出し、スマホやタブレットで見ることを想定して画面回転対応可能なcssアニメーションを使用したサイトを作成しました。</p>
+                </div>
+            </div>
+
+            <div class="title sample-a fade_off" id="page-jump">
+                <p>各ページの解説</p>
+            </div>
+            <div class="page-index">
+                <div class="page-index__1">
+                    <div class="page-index__1__text  sample-b fade_off">
+                        <ul class="sample2">
+                            <li><span>作業テーマ</span><br>画面回転に合わせる</li>
+                            <li><span>どんな技術を<br>使ったか</span><br>cssアニメーションを使用してワクワク感を演出したり、ウインドウサイズにフィットするようにjQueryでコンテンツの大きさなどを制御した</li>
+                            <li><span>なぜ？</span><br>没入感を深め、ゲーム感を出す為</li>
+                            <li><span>作業環境</span><br>Windows・<br>Visual Studio Code</li> 
+                            <!-- <li><span>時間</span><br>約45時間</li>         -->
+                        </ul>
+                    </div>
+                    <div class="box  sample-c fade_off">
+                        <div id="card-container">
+                            <div id="card">
+                                <div class="front face">
+                                    <img src="../portfolio/img/nazotoki-top.png"/>
+                                </div>
+                                <div class="back face">
+                                    <h2 class="bf__title">TOPページ</h2>
+                                    <ul class="sample2 point none">
+                                        <li>デザインのポイント<br><span>ノンスクロールの1画面完結のデザイン</span></li>
+                                        <li>工夫した点
+                                            <span><br>1：cssアニメーション終了後にサイトトップを自動で出す
+                                            <br>2：cssアニメーションを二つつなげる
+                                            <br>3：四辺に沿ったメニューバーの設置
+                                            <br>4：cssアニメーションをスキップするボタンの実装
+                                            <br>5：画面回転に対応させるため、jQueryで制御</span>
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-index__1">
+                    <div class="page-index__1__text  sample-b fade_off">
+                        <ul class="sample2">
+                            <li><span>作業テーマ</span><br>わかりやすく楽しく情報を伝える</li>
+                            <li><span>どんな技術を<br>使ったか</span><br>cssアニメーションを使用</li>
+                            <li><span>なぜ？</span><br>動きをつけて遊び心を刺激する</li>
+                            <li><span>作業環境</span><br>Windows・<br>Visual Studio Code</li> 
+                            <!-- <li><span>時間</span><br>約15時間</li>         -->
+                        </ul>
+                    </div>
+                    <div class="box  sample-c fade_off">
+                        <div id="card-container">
+                            <div id="card">
+                                <div class="front face">
+                                    <img src="../portfolio/img/nazo-intoro.PNG.jpg"/>
+                                </div>
+                                <div class="back face">
+                                    <h2 class="bf__title">趣旨紹介ページ</h2>
+                                    <ul class="sample2 point none">
+                                        <li>デザインのポイント<br><span>1画面で完結するページ</span></li>
+                                        <li>工夫した点
+                                            <span><br>1：文字が躍るcssアニメーションの実装
+                                            <br>2：映画風cssアニメーションで没入感を高める演出
+                                            <br>3：TOPへ戻るボタンや文字の位置</span>
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-index__1">
+                    <div class="page-index__1__text  sample-b fade_off">
+                        <ul class="sample2">
+                            <li><span>作業テーマ</span><br>可変式スライダーの実装</li>
+                            <li><span>どんな技術を<br>使ったか</span><br>可変式スライダーの実装</li>
+                            <li><span>なぜ？</span><br>わかりやすく、見やすくするため</li>
+                            <li><span>作業環境</span><br>Windows・<br>Visual Studio Code</li> 
+                            <!-- <li><span>時間</span><br>約20時間</li>         -->
+                        </ul>
+                    </div>
+                    <div class="box  sample-c fade_off">
+                        <div id="card-container">
+                            <div id="card">
+                                <div class="front face">
+                                    <img src="../portfolio/img/nazo-play.jpg"/>
+                                </div>
+                                <div class="back face">
+                                    <h2 class="bf__title">遊び方紹介ページ</h2>
+                                    <ul class="sample2 point none">
+                                        <li>デザインのポイント<br><span>操作性とわかりやすさの両立</span></li>
+                                        <li>工夫した点
+                                            <span><br>1：ウインドウサイズにフィットするスライダーの実装
+                                            <br>2：文字が躍るcssアニメーションの実装
+                                            <br>3：ボタンや文字の位置</span>
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-index__1">
+                    <div class="page-index__1__text  sample-b fade_off">
+                        <ul class="sample2">
+                            <li><span>作業テーマ</span><br>見やすいコンテンツの配置</li>
+                            <li><span>どんな技術を<br>使ったか</span><br>可変式スライダーの実装</li>
+                            <li><span>なぜ？</span><br>操作性をあげるため</li>
+                            <li><span>作業環境</span><br>Windows・<br>Visual Studio Code</li> 
+                            <!-- <li><span>時間</span><br>約15時間</li>         -->
+                        </ul>
+                    </div>
+                    <div class="box  sample-c fade_off">
+                        <div id="card-container">
+                            <div id="card">
+                                <div class="front face">
+                                    <img src="../portfolio/img/nazo-otamesi.jpg"/>
+                                </div>
+                                <div class="back face">
+                                    <h2 class="bf__title">お試し謎のページ</h2>
+                                    <ul class="sample2 point none">
+                                        <li>デザインのポイント<br><span>読みやすく印象的に</span></li>
+                                        <li>工夫した点
+                                            <span><br>1：ウインドウサイズにフィットするスライダーの実装
+                                            <br>2：文字が躍るcssアニメーションの実装
+                                            <br>3：ボタンや文字、画像の位置や大きさの可変</span>
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-index__1">
+                    <div class="page-index__1__text  sample-b fade_off">
+                        <ul class="sample2">
+                            <li><span>作業テーマ</span><br>細かいアニメーションの調整</li>
+                            <li><span>どんな技術を<br>使ったか</span><br>映画風cssアニメーションを実装</li>
+                            <li><span>なぜ？</span><br>長い説明部分を飽きずに印象的にするため</li>
+                            <li><span>作業環境</span><br>Windows・<br>Visual Studio Code</li> 
+                            <!-- <li><span>時間</span><br>約15時間</li>         -->
+                        </ul>
+                    </div>
+                    <div class="box  sample-c fade_off">
+                        <div id="card-container">
+                            <div id="card">
+                                <div class="front face">
+                                    <img src="../portfolio/img/nazo-kounyuu.jpg"/>
+                                </div>
+                                <div class="back face">
+                                    <h2 class="bf__title">キット購入方法のページ</h2>
+                                    <ul class="sample2 point none">
+                                        <li>デザインのポイント<br><span>読みやすく印象的に</span></li>
+                                        <li>工夫した点
+                                            <span><br>1：ウインドウサイズにフィットするスライダーの実装
+                                            <br>2：文字が躍るcssアニメーションの実装
+                                            <br>3：ボタンや文字の位置の可変
+                                            <br>4：アニメーションの長さと文章量の調整</span>
+                                        </li>     
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="title sample-a fade_off" id="hp-jump">
+                <p>その他の制作物</p>
+            </div>
+            <div class="hp">
+                <div class="hp-a">
+                    <div class="hp__key-concept  sample-b fade_off">
+                        <h2>シンプルで<br>わかりやすいデザイン</h2>
+                        <h3>ポートフォリオ用HP</h3>
+                        <p> &emsp;『わかりやすい』『思考の見える化』をキーワードに、シンプルでわかりやすいデザインを追求しました。</p>
+                        <a href="hp2.html#top-jump" class="arrow">詳細へ</a>
+                    </div>
+                    <div class="hp__key-visual   sample-c fade_off">
+                        <div class="sample6">
+                            <img src="../portfolio/img/portfolio-top.png" alt="サイトのホーム画面の画像" />
+                            <a href="../portfolio/index.html#top" target="_blank" ><div class="mask">
+                                <div class="caption">クリックして<br>サイトへ飛ぶ</div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="hp-b">
+                    <div class="hp__key-concept  sample-b fade_off">
+                        <h2>お題に沿ってデザインする</h2>
+                            <h3>バナーデザイン集</h3>
+                            <p>こばやす✍️Webデザイナーさんのtwitter企画&emsp;#バナーお題を利用し、作成したバナーを載せています。
+                            </p>
+                        <a href="hp4.html#top" target="_blank" class="arrow">詳細へ</a>
+                    </div>
+                    <div class="hp__key-visual   sample-c fade_off">
+                        <div class="sample6">
+                            <img src="../portfolio/img/banner-top.png" alt="サイトのホーム画面の画像" />
+                            <a href="hp4.html#top" target="_blank" ><div class="mask">
+                                <div class="caption">クリックしてページへ飛ぶ</div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hp-a">
+                <div class="hp__key-concept  sample-b fade_off">
+                    <h2>お題にそって制作する</h2>
+                        <h3>動画作例集</h3>
+                        <p> お題を元に作成した動画を載せています。</p>
+                    <a href="hp5.html#top-jump" target="_blank" class="arrow">詳細へ</a>
+                </div>
+                <div class="hp__key-visual   sample-c fade_off">
+                    <div class="sample6">
+                        <img src="../portfolio/img/douga.png" alt="サイトのホーム画面の画像" />
+                        <a href="hp5.html#top" target="_blank" ><div class="mask">
+                            <div class="caption">クリックしてページへ飛ぶ</div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="title sample-a fade_off" id="profile-jump">
+                <p><a href="index.html#top">SATO's&nbsp;&nbsp;ポートフォリオ</a></p>
+            </div>
+
+            <footer>
+                <h1 class="catchcopy1">閲覧<br>ありがとう<br>ございました。</h1>
+            </footer>
+        </div>
+    </body>
+
+</html>
